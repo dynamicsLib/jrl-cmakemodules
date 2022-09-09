@@ -41,6 +41,13 @@ endif(${ARGC})
 option(INSTALL_DOCUMENTATION "Generate and install the documentation" ON)
 option(INSTALL_GENERATED_HEADERS "Generate and install standard headers" ON)
 option(INSTALL_PKG_CONFIG_FILE "Generate and install standard .pc file" ON)
+option(BUILD_SHARED_LIBS "Libraries should be SHARED" ON)
+
+if(BUILD_SHARED_LIBS)
+  set(SHARED_KW "SHARED")
+else()
+  set(SHARED_KW "STATIC")
+endif()
 
 include(CTest)
 enable_testing()
